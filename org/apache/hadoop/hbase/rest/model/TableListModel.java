@@ -84,7 +84,8 @@ public class TableListModel implements Serializable, ProtobufMessageHandler {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		for(TableModel aTable : tables) {
-			sb.append(aTable.toString());
+			// sb.append(aTable.toString()); // SHUNTING
+			sb.append(">>>>>>>>>>>>>>>>>>>>>> " + aTable.toString() + " <<<<<<<<<<<<<<<<<<<<<<");
 			sb.append('\n');
 		}
 		return sb.toString();

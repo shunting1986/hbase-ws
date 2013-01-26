@@ -76,6 +76,7 @@ public class RootResource extends ResourceBase {
     }
     servlet.getMetrics().incrementRequests(1);
     try {
+			System.out.println("++++++++++++++++++++++ SHUNTING: get table list++++++++++++++++"); // SHUNTING
       ResponseBuilder response = Response.ok(getTableList());
       response.cacheControl(cacheControl);
       servlet.getMetrics().incrementSucessfulGetRequests(1);
@@ -104,4 +105,9 @@ public class RootResource extends ResourceBase {
       final @PathParam("table") String table) throws IOException {
     return new TableResource(table);
   }
+
+	@Path("shunting")
+	public ShuntingResource getShuntingResource() throws IOException {
+		return new ShuntingResource();
+	}
 }
